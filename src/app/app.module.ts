@@ -12,5 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [BrowserModule, WordsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ConfirmDialogComponent]
 })
 export class AppModule {}
