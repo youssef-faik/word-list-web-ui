@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { WordsModule } from './words/words.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
