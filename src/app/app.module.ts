@@ -8,6 +8,8 @@ import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
