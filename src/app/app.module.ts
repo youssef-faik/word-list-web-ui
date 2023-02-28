@@ -10,6 +10,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {HttpClientModule} from "@angular/common/http";
+import {WordsService} from "./core/words/words.service";
+import {DialogsService} from "./dialogs/dialogs.service";
+import {CanDeactivateGuardGuard} from "./guard/can-deactivate-guard.guard";
 
 
 @NgModule({
@@ -22,9 +27,14 @@ import { MatCardModule } from '@angular/material/card';
     MatDialogModule,
     MatFormFieldModule,
     MatCardModule,
+    MatToolbarModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent],
+  providers: [
+    HttpClientModule,
+    WordsService,
+    DialogsService,
+    CanDeactivateGuardGuard],
+  bootstrap: [AppComponent]
+  // entryComponents: [ConfirmDialogComponent],
 })
 export class AppModule {}

@@ -7,6 +7,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
+import {WordsRoutingModule} from "./words-routing.module";
 
 @NgModule({
   declarations: [WordsDetailsComponent, WordsListComponent],
@@ -17,6 +20,9 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatDividerModule,
     FormsModule,
+    MatIconModule,
+    MatListModule,
+    WordsRoutingModule
   ],
 })
 export class WordsModule {}
