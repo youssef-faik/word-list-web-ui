@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { IWord, Word } from '../../core/words/words.model';
-import { WordsService } from '../../core/words/words.service';
-import { Observable, of } from 'rxjs';
-import { DialogsService } from '../../dialogs/dialogs.service';
-import { CanComponentDeactivate } from '../../guard/can-deactivate-guard.guard';
-import { NgModule } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {IWord, Word} from '../../core/words/words.model';
+import {WordsService} from '../../core/words/words.service';
+import {Observable, of} from 'rxjs';
+import {DialogsService} from '../../dialogs/dialogs.service';
+import {CanComponentDeactivate} from '../../guard/can-deactivate-guard.guard';
 
 @Component({
   selector: 'app-words-details',
@@ -21,14 +20,13 @@ export class WordsDetailsComponent implements OnInit, CanComponentDeactivate {
     private router: Router,
     private wordsService: WordsService,
     private dialogsService: DialogsService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     var id = this.route.snapshot.paramMap.get('id');
-    (id
-      ? this.wordsService.getWord(id)
-      : of(new Word('', 'Test name'))
-    ).subscribe(
+    (id? this.wordsService.getWord(id): of(new Word('', 'Test name')))
+      .subscribe(
       (data) => {
         this.word = data;
         this.name = data.name;
@@ -49,6 +47,7 @@ export class WordsDetailsComponent implements OnInit, CanComponentDeactivate {
 
   save(): void {
     const wordToSave = new Word(this.word.id, this.name);
+    console.log(`wordToSave => ${wordToSave}`)
     this.wordsService.save(wordToSave).subscribe(
       (data) => {
         Object.assign(this.word, {

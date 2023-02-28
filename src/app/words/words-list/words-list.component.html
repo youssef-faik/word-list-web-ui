@@ -1,8 +1,10 @@
 <mat-card class="scrollable-content">
-  <mat-card-header fxLayout="row">
-    <h3 fxFlex="100">Words list:</h3>
-    <button fxFlex="none" mat-raised-button color="primary" routerLink="detail">
-      <mat-icon>add</mat-icon>Add new word
+  <mat-card-header >
+    <h2>Words list</h2>
+    <span class="example-spacer"></span>
+    <button color="primary" mat-raised-button routerLink="detail">
+      <mat-icon>add</mat-icon>
+      Add new word
     </button>
   </mat-card-header>
   <mat-divider></mat-divider>
@@ -12,12 +14,10 @@
         *ngFor="let word of words"
         routerLink="detail/{{ word.id }}"
       >
-        <h3 matLine>
-          <b>{{ word.name }}</b>
-        </h3>
-        <mat-icon class="icon" (click)="deleteWord($event, word.id)"
-          >delete</mat-icon
-        >
+        <div matListItemTitle matLine><b>{{ word.name }}</b></div>
+        <mat-icon matListItemIcon (click)="deleteWord($event, word.id)" class="icon">
+          delete
+        </mat-icon>
       </mat-list-item>
     </mat-nav-list>
   </mat-card-content>

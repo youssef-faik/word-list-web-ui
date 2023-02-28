@@ -3,6 +3,6 @@
   {{description}}
 </mat-dialog-content>
 <mat-dialog-actions class="actions-container">
-  <button class="mat-raised-button" (click)="cancel()">Cancel</button>
-  <button class="mat-raised-button mat-primary" (click)="apply()">OK</button>
+  <button (click)="cancel()" mat-raised-button>Cancel</button>
+  <button (click)="apply()" mat-raised-button color="primary">OK</button>
 </mat-dialog-actions>

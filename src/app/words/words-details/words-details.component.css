@@ -1,11 +1,23 @@
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 
 .mat-card-header h2 {
-    margin: 10px -0.8em;
+  margin: 10px -0.8em;
 }
 
 .mat-card-content {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+mat-card {
+  max-width: 80%;
+  margin: 24px auto;
+}
+
+mat-form-field {
+  margin-top: 12px;
+}
+
+mat-card-actions button{
+  margin-right: 12px;
 }

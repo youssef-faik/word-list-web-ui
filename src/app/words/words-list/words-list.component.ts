@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { IWord } from '../../core/words/words.model';
-import { WordsService } from '../../core/words/words.service';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../../dialogs/confirm-dialog/confirm-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {IWord} from '../../core/words/words.model';
+import {WordsService} from '../../core/words/words.service';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {ConfirmDialogComponent} from '../../dialogs/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-words-list',
@@ -82,4 +82,6 @@ export class WordsListComponent implements OnInit {
   private handleDeleteEvent(removedEntityId: string): void {
     this.words = this.words.filter((item) => item.id !== removedEntityId);
   }
+
+
 }

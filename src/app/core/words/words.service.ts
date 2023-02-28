@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import { Observable, Subject } from 'rxjs';
-import { IWord, IUpdateMessage } from './words.model';
-import { environment as env } from '../../../environments/environment';
+import {Observable, Subject} from 'rxjs';
+import {IUpdateMessage, IWord} from './words.model';
 
 const SERVER_URL = 'http://localhost:8089/gs-guide-websocket';
 
@@ -12,14 +11,16 @@ const SERVER_URL = 'http://localhost:8089/gs-guide-websocket';
   providedIn: 'root',
 })
 export class WordsService {
-  private resourceUrl = `${env.baseUrl}/words`;
   public updateEvents: Subject<IUpdateMessage>;
+  // private resourceUrl = `${env.baseUrl}/words`;
+  private resourceUrl = `http://localhost:8089`;
   private stompClient;
 
   constructor(private http: HttpClient) {
     this.updateEvents = new Subject<IUpdateMessage>();
 
     const ws = new SockJS(SERVER_URL);
+
     this.stompClient = Stomp.over(ws);
     this.stompClient.connect({}, () => {
       this.stompClient.subscribe('/topic/words', (message) => {
@@ -28,6 +29,7 @@ export class WordsService {
         }
       });
     });
+
   }
 
   getAll(): Observable<IWord[]> {

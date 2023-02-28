@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -12,13 +12,14 @@ export class ConfirmDialogComponent {
 
   constructor(
     private dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) { title, description } : { title:any, description:any }
+    @Inject(MAT_DIALOG_DATA) {title, description}: { title: any, description: any }
   ) {
     this.title = title || 'Confirmation dialog';
     this.description = description;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   apply() {
     this.dialogRef.close(true);
